@@ -29,8 +29,9 @@ template<typename T>
 
 // Other Funtion Definitions
 
-// operator "<<" overloading
+// operator "<<" overloading for BTNode<T>
 template<typename T> 
   std::ostream& operator<<(std::ostream& out, BTNode<T>& node) {
   return out << node.to_string();
 }
+
