@@ -28,11 +28,10 @@ int main() {
   Binary_Tree<MTTuple> rT(mt_r);
   Binary_Tree<MTTuple> big(mt,lT,rT);
 
-  cout << big;
-  //Binary_Tree<MTTuple> rbig(dat,big,rT);
-  //Binary_Tree<MTTuple> rrbig(dat,lT,rbig);
+  Binary_Tree<MTTuple> rbig(mt,big,rT);
+  Binary_Tree<MTTuple> rrbig(mt,lT,rbig);
 
-  //cout << rrbig;
+  cout << rrbig;
 
   return 0;
 }

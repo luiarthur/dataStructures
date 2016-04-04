@@ -6,6 +6,10 @@
 #include <string>      // for Binary_Tree::to_string()
 #include "BTNode.h"
 
+// When working with Template Classes and Functions, put
+// all code in one file. Otherwise, compiler will not
+// compile successfully.
+
 template<typename T> class Binary_Tree {
     public:
         // Constructors:
