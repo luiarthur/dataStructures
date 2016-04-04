@@ -93,6 +93,7 @@ template<typename T>
   return os.str();
 }
 
+// Work in progress
 template<typename T>
   std::string Binary_Tree<T>::to_pretty_string() {
   std::ostringstream os;

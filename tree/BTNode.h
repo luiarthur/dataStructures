@@ -23,10 +23,18 @@ template<typename T>
     os << data;
     return os.str();
   }
+
+  virtual std::string to_pretty_string();
 };
 
 // operator "<<" overloading for BTNode<T>
 template<typename T> 
   std::ostream& operator<<(std::ostream& out, BTNode<T>& node) {
   return out << node.to_string();
+}
+
+// Work in Progress
+template<typename T>
+  std::string BTNode<T>::to_pretty_string() {
+  return "s";
 }
