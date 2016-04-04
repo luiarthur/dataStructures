@@ -7,3 +7,9 @@ In code comments, I will use the shorthand (KF p.100) to denote p. 100 of the me
 
 I will implement some data structures from the book, as well as create classes used in statistics
 such as the mondrian tree class.
+
+# For Drawing Trees
+
+Need to implement tree drawing:
+  - http://blog.pixelingene.com/2011/07/building-a-tree-diagram-in-d3-js/
+  - https://github.com/mbostock/d3/wiki/Gallery
