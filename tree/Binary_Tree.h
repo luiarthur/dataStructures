@@ -33,6 +33,7 @@ template<typename T> class Binary_Tree {
         bool is_leaf();
         bool is_null();
         virtual std::string to_string(); // draw the tree
+        virtual std::string to_pretty_string(); // draw a pretty tree
 
     protected:
         Binary_Tree(BTNode<T>* new_root) : root(new_root) {}
@@ -89,5 +90,18 @@ template<typename T>
     os << get_left_tree().to_string();
     os << get_right_tree().to_string();
   }
+  return os.str();
+}
+
+template<typename T>
+  std::string Binary_Tree<T>::to_pretty_string() {
+  std::ostringstream os;
+
+  if (is_null()) {
+    os << "NULL\n";
+  } else {
+    os << "HI\n";
+  }
+
   return os.str();
 }
