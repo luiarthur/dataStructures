@@ -1,6 +1,7 @@
 #include <iostream>
 #include "../Binary_Tree.h"
 
+
 using namespace std;
 
 int main() {
@@ -16,10 +17,10 @@ int main() {
 
 
 
-  BTNode<int> lN(1);
+  BTNode<int> lN(1000);
   BTNode<int> rN(3);
-  BTNode<int> node_c(2,&lN,&rN);
-  cout << node_c << endl;
+  BTNode<int> node_c(123,&lN,&rN);
+  cout << pretty_string(node_c)<< endl;
 
   return 0;
 }
