@@ -27,12 +27,12 @@ struct MNode {
   }
 };
 
-// operator "<<" overloading for MNode<T>
+// operator "<<" overloading for MNode
 std::ostream& operator<<(std::ostream &out, MNode &node) {
   return out << node.to_string();
 }
 
-// operator "<<" overloading for MNode<T>
+// operator "<<" overloading for MNode
 std::ostream& operator<<(std::ostream &out, MNode *node) {
   return out << (*node).to_string();
 }
