@@ -38,6 +38,16 @@ template<typename T> class Binary_Tree {
 };
 
 
+
+// Operator "<<" Overloading for Binary_Tree<T>
+template<typename T>
+  std::ostream& operator<<(std::ostream& out, Binary_Tree<T>& tree) {
+  return out << tree.to_string();
+}
+
+
+
+// Implementation of member functions.
 template<typename T>
   Binary_Tree<T> Binary_Tree<T>::get_left_tree() {
   if (root == NULL) {
@@ -82,7 +92,4 @@ template<typename T>
   return os.str();
 }
 
-template<typename T>
-  std::ostream& operator<<(std::ostream& out, Binary_Tree<T>& tree) {
-  return out << tree.to_string();
-}
+

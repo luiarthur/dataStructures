@@ -33,5 +33,7 @@ int main() {
 
   cout << rrbig;
 
+  cout << endl << rrbig.root << endl;
+
   return 0;
 }
