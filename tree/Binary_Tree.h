@@ -26,8 +26,10 @@ template<typename T> class Binary_Tree {
         Binary_Tree<T> get_left_tree();
         Binary_Tree<T> get_right_tree();
 
+        // Get Data
+        T& get_data() {return root->data;}
+
         // Other Member functions
-        //const T& dat() const;
         bool is_leaf();
         bool is_null();
         virtual std::string to_string(); // draw the tree
@@ -38,7 +40,6 @@ template<typename T> class Binary_Tree {
 };
 
 
-
 // Operator "<<" Overloading for Binary_Tree<T>
 template<typename T>
   std::ostream& operator<<(std::ostream& out, Binary_Tree<T>& tree) {
@@ -46,12 +47,11 @@ template<typename T>
 }
 
 
-
 // Implementation of member functions.
 template<typename T>
   Binary_Tree<T> Binary_Tree<T>::get_left_tree() {
   if (root == NULL) {
-    throw std::invalid_argument("Cannot get left subtree of Empty Tree.");
+    throw std::invalid_argument("Cannot get left subtree of Empty Tree!");
   }
   return Binary_Tree<T>(root->left);
 }
@@ -91,5 +91,3 @@ template<typename T>
   }
   return os.str();
 }
-
-

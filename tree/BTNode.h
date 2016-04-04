@@ -7,14 +7,12 @@ template<typename T>
   T data;
   BTNode<T> *left;
   BTNode<T> *right;
-  BTNode<T> *parent;
 
   // Constructor
   BTNode(const T& dat, 
          BTNode<T>* left_val=NULL,
-         BTNode<T>* right_val=NULL,
-         BTNode<T>* parent_val=NULL) :
-    data(dat), left(left_val), right(right_val), parent(parent_val) {}
+         BTNode<T>* right_val=NULL):
+    data(dat), left(left_val), right(right_val) {}
   
   // Destructor (to avoid warning message)
   virtual ~BTNode() {}
