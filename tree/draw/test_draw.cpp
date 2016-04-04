@@ -27,7 +27,7 @@ int main() {
   cout << "mn_cluster.p:  " << mn_cluster.parent << endl;
   cout << "mn_cluster.d:  " << mn_cluster << endl;
   cout << "mn_cluster.l:  " << mn_cluster.left << endl;
-  cout << "mn_cluster.r:  " << (*mn_cluster.right).parent<< endl;
+  cout << "mn_cluster.r:  " << mn_cluster.right<< endl;
 
 
   return 0;
