@@ -101,8 +101,14 @@ template<typename T>
   if (is_null()) {
     os << "NULL\n";
   } else {
-    os << "HI\n";
+    os << (*root).to_string() << "\n";
+    os << get_left_tree().to_string();
+    os << get_right_tree().to_string();
   }
 
-  return os.str();
+  std::string preorder = os.str();
+  std::string pretty_tree = preorder;
+
+
+  return pretty_tree;
 }
