@@ -48,7 +48,8 @@ SS <- draw_node("0",S,s); print_node(SS)
 SSS <- draw_node("3",S,SS,sep=3); print_node(SSS)
 
 # Draw Tree
-preorder
+x <- preorder
+rx <- rev(preorder)
 draw_tree <- function(x,sep=2,out="") {
-
+  x <- 0
 }
