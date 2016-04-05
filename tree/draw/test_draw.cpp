@@ -11,8 +11,9 @@ int main() {
   Binary_Tree<int> rT(3);
   Binary_Tree<int> big(2,lT,rT);
   Binary_Tree<int> rbig(0,lT,big);
+  Binary_Tree<int> rrbig(0,rbig,big);
 
-  cout << rbig.to_pretty_string() << endl;
+  cout << rrbig.to_pretty_string() << endl;
 
   return 0;
 }
