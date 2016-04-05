@@ -68,7 +68,9 @@ draw_tree <- function(x) {
     } else if (length(left) == 1 && length(right) > 1) {
       draw_node(root,left,draw_tree.rec(right))
     } else if (length(right) == 1 && length(left) > 1) {
-      draw_node(root,draw_tree.rec(left),right)
+      draw_node(root,
+                draw_tree.rec( c(left[1], left[2],"|", left) ),
+                right)
     } else {
       draw_node(root,left,right)
     }
