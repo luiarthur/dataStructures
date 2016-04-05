@@ -49,7 +49,31 @@ SSS <- draw_node("3",S,SS,sep=3); print_node(SSS)
 
 # Draw Tree
 x <- preorder
-rx <- rev(preorder)
-draw_tree <- function(x,sep=2,out="") {
-  x <- 0
+x <- c("0","0","1","NULL","NULL","2","1","NULL","NULL","3","NULL","NULL","2","1","NULL","NULL","3","NULL","NULL")
+
+draw_tree <- function(x) {
+  y <- gsub("NULL,NULL", "|", paste(x,collapse=","))
+  y <- unlist( strsplit(y,",") )
+
+  draw_tree.rec <- function(z) {
+    if (tail(z,1) == "|") z <- z[-length(z)]
+    pos <- min( which(z == "|") )
+    root <- z[1]
+    left <- z[2:(pos-1)]
+    right <- z[(pos+1):length(z)]
+    
+    # Figure out the case for left > 1
+    if (length(left) > 1 && length(right) > 1) {
+      draw_node(root,draw_tree.rec(left),draw_tree.rec(right))
+    } else if (length(left) == 1 && length(right) > 1) {
+      draw_node(root,left,draw_tree.rec(right))
+    } else if (length(right) == 1 && length(left) > 1) {
+      draw_node(root,draw_tree.rec(left),right)
+    } else {
+      draw_node(root,left,right)
+    }
+  }
+  
+  s <- draw_tree.rec(y); print_node(s)
 }
+draw_tree(x)
