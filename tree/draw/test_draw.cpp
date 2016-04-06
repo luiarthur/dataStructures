@@ -1,4 +1,5 @@
-#include <iostream>
+#include <iostream> // cin, cout
+#include <fstream> // ofstream, streambuf
 #include "../Binary_Tree.h"
 
 
@@ -13,7 +14,13 @@ int main() {
   Binary_Tree<int> rrbig(0,rbig,big);
   Binary_Tree<int> rrrbig(0,rbig,rrbig);
 
-  cout << rrrbig.to_pretty_string();
+
+  std::ofstream out("mytree.o");
+  std::streambuf *coutbuf = std::cout.rdbuf(); //save old buf
+  std::cout.rdbuf(out.rdbuf()); //redirect std::cout to out.txt!
+
+  cout << rrrbig.to_string();
+  std::cout.rdbuf(coutbuf); //reset to standard output again
 
   return 0;
 }

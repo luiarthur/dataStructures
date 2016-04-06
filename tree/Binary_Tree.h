@@ -5,6 +5,7 @@
 #include <stdexcept>   // for Binary_Tree::to_string()
 #include <string>      // for Binary_Tree::to_string()
 #include "BTNode.h"
+#include "stringsplit.h"
 
 // When working with Template Classes and Functions, put
 // all code in one file. Otherwise, compiler will not
@@ -33,7 +34,7 @@ template<typename T> class Binary_Tree {
         bool is_leaf();
         bool is_null();
         virtual std::string to_string(); // draw the tree
-        virtual std::string to_pretty_string(); // draw a pretty tree
+        //virtual std::string to_pretty_string(); // draw a pretty tree
 
     protected:
         Binary_Tree(BTNode<T>* new_root) : root(new_root) {}
@@ -94,9 +95,23 @@ template<typename T>
 }
 
 // Work in progress
-template<typename T>
-  std::string Binary_Tree<T>::to_pretty_string() {
-  std::string pretty_tree = this->to_string();
-
-  return pretty_tree;
-}
+//std::vector<std::string> paste_block (std::vector<std::string> x, std::vector<std::string> y) {
+//  int N;
+//  if (x.size() < y.size()) {
+//    N = y.size();
+//
+//  } else {
+//    N = x.size();
+//  }
+//}
+//
+//template<typename T>
+//  std::string Binary_Tree<T>::to_pretty_string() {
+//  std::string pretty_tree = this->to_string();
+//                                                     //.c_str: string => char*
+//  std::vector<std::string> v_tree = split(pretty_tree.c_str(),'\n');
+//  //std::cout << arr_tree << std::endl;
+//  
+//
+//  return pretty_tree + std::string(10,'_') ;
+//}
