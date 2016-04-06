@@ -15,15 +15,15 @@ paste_block <- function(x,y) {
 }
 '%+%' <- function(x,y) paste_block(x,y)
 
-xx <- c("111","222","333")
-yy <- c("1111","2222","3333","4444")
-
-zz <- paste_block(xx,yy)
-cat(zz[1],"\n"); cat(zz[2],"\n"); cat(zz[3],"\n"); cat(zz[4],"\n")
-
-
-zz2 <- xx %+% yy
-cat(zz2[1],"\n"); cat(zz2[2],"\n"); cat(zz2[3],"\n"); cat(zz2[4],"\n")
+#xx <- c("111","222","333")
+#yy <- c("1111","2222","3333","4444")
+#
+#zz <- paste_block(xx,yy)
+#cat(zz[1],"\n"); cat(zz[2],"\n"); cat(zz[3],"\n"); cat(zz[4],"\n")
+#
+#
+#zz2 <- xx %+% yy
+#cat(zz2[1],"\n"); cat(zz2[2],"\n"); cat(zz2[3],"\n"); cat(zz2[4],"\n")
 
 # Draw Node
 rgx <- function(pattern,x) regexpr(pattern,x)[1]
@@ -42,10 +42,10 @@ draw_node <- function(root,left,right,sep=2,sep_r=sep,sep_l=sep) {
   c(line1,line2)
 }
 
-s <- draw_node("100","2000","3"); print_node(s)
-S <- draw_node("0",s,s); print_node(S)
-SS <- draw_node("0",S,s); print_node(SS)
-SSS <- draw_node("3",S,SS,sep=3); print_node(SSS)
+#s <- draw_node("100","2000","3"); print_node(s)
+#S <- draw_node("0",s,s); print_node(S)
+#SS <- draw_node("0",S,s); print_node(SS)
+#SSS <- draw_node("3",S,SS,sep=3); print_node(SSS)
 
 # Draw Tree
 draw_tree <- function(x) {
@@ -94,9 +94,9 @@ draw_tree <- function(x) {
   
   s <- draw_tree.rec(y); print_node(s)
 }
-x <- preorder
-x <- c("0","0","1","NULL","NULL","2","1","NULL","NULL","3","NULL","NULL","2","1","NULL","NULL","3","NULL","NULL")
-x <- c(0,0,0,1,"NULL","NULL",2,"NULL","NULL",1,1,"NULL","NULL",2,"NULL","NULL",1,2,"NULL","NULL",3,1,"NULL","NULL",2,1,"NULL","NULL",2)
-
-x <- readLines("../tmp.o")
-draw_tree(x)
+#x <- preorder
+#x <- c("0","0","1","NULL","NULL","2","1","NULL","NULL","3","NULL","NULL","2","1","NULL","NULL","3","NULL","NULL")
+#x <- c(0,0,0,1,"NULL","NULL",2,"NULL","NULL",1,1,"NULL","NULL",2,"NULL","NULL",1,2,"NULL","NULL",3,1,"NULL","NULL",2,1,"NULL","NULL",2)
+#
+#x <- readLines("../tmp.o")
+#draw_tree(x)
