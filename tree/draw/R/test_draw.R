@@ -48,34 +48,53 @@ SS <- draw_node("0",S,s); print_node(SS)
 SSS <- draw_node("3",S,SS,sep=3); print_node(SSS)
 
 # Draw Tree
-x <- preorder
-x <- c("0","0","1","NULL","NULL","2","1","NULL","NULL","3","NULL","NULL","2","1","NULL","NULL","3","NULL","NULL")
-
 draw_tree <- function(x) {
   y <- gsub("NULL,NULL", "|", paste(x,collapse=","))
   y <- unlist( strsplit(y,",") )
 
   draw_tree.rec <- function(z) {
-    if (tail(z,1) == "|") z <- z[-length(z)]
-    pos <- min( which(z == "|") )
+    rm.tail.bar <- function(xx) if (tail(xx,1) == "|") xx[-length(xx)] else xx
+    forward <- function(B,b) {
+      needed <- B
+      pts <- 0
+      i = 0
+      while (pts < needed) {
+        if (z[i+b] == "|") {
+          pts <- pts + 1
+        } else if (z[i+b-1] != "|") {
+          needed <- needed + 1
+        }
+        i <- i + 1
+      }
+      b + i - 1
+    }
+
+    pos <- which(z == "|")[1]
+    num.B <- pos - 2
+    left.up <- forward(num.B,pos)
+
     root <- z[1]
-    left <- z[2:(pos-1)]
-    right <- z[(pos+1):length(z)]
+    left <- rm.tail.bar(z[2:left.up])
+    right <- rm.tail.bar(z[-(1:left.up)])
     
-    # Figure out the case for left > 1
-    if (length(left) > 1 && length(right) > 1) {
-      draw_node(root,draw_tree.rec(left),draw_tree.rec(right))
-    } else if (length(left) == 1 && length(right) > 1) {
-      draw_node(root,left,draw_tree.rec(right))
-    } else if (length(right) == 1 && length(left) > 1) {
-      draw_node(root,
-                draw_tree.rec( c(left[1], left[2],"|", left) ),
-                right)
-    } else {
+    if (length(left)==1 && length(right)==1) {
       draw_node(root,left,right)
+    } else {
+      L <- left
+      R <- right
+      if (length(left) > 1 ) {
+        L <- draw_tree.rec(left)
+      }
+      if (length(right) > 1) {
+        R <- draw_tree.rec(right)
+      }
+      draw_node(root,L,R)
     }
   }
   
   s <- draw_tree.rec(y); print_node(s)
 }
+x <- preorder
+x <- c("0","0","1","NULL","NULL","2","1","NULL","NULL","3","NULL","NULL","2","1","NULL","NULL","3","NULL","NULL")
+
 draw_tree(x)
