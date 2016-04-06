@@ -96,19 +96,7 @@ template<typename T>
 // Work in progress
 template<typename T>
   std::string Binary_Tree<T>::to_pretty_string() {
-  std::ostringstream os;
-
-  if (is_null()) {
-    os << "NULL\n";
-  } else {
-    os << (*root).to_string() << "\n";
-    os << get_left_tree().to_string();
-    os << get_right_tree().to_string();
-  }
-
-  std::string preorder = os.str();
-  std::string pretty_tree = preorder;
-
+  std::string pretty_tree = this->to_string();
 
   return pretty_tree;
 }
