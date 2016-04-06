@@ -96,5 +96,7 @@ draw_tree <- function(x) {
 }
 x <- preorder
 x <- c("0","0","1","NULL","NULL","2","1","NULL","NULL","3","NULL","NULL","2","1","NULL","NULL","3","NULL","NULL")
+x <- c(0,0,0,1,"NULL","NULL",2,"NULL","NULL",1,1,"NULL","NULL",2,"NULL","NULL",1,2,"NULL","NULL",3,1,"NULL","NULL",2,1,"NULL","NULL",2)
 
+x <- readLines("../tmp.o")
 draw_tree(x)
