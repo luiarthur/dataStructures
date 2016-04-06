@@ -1,4 +1,4 @@
-preorder <- c("0","1","NULL","NULL","2","1","NULL","NULL","3","NULL","NULL")
+#preorder <- c("0","1","NULL","NULL","2","1","NULL","NULL","3","NULL","NULL")
 
 blanks <- function(n,char=" ") paste0(rep(char,n),collapse="")
 paste_block <- function(x,y) {
