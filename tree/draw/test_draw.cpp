@@ -1,27 +1,28 @@
 #include <iostream> // cin, cout
 #include <fstream> // ofstream, streambuf
 #include "../Binary_Tree.h"
+#include "../mt_tuple.h"
 
 
 using namespace std;
 
 int main() {
 
-  Binary_Tree<int> lT(1);
-  Binary_Tree<int> rT(3);
-  Binary_Tree<int> big(2,lT,rT);
-  Binary_Tree<int> rbig(0,lT,big);
-  Binary_Tree<int> rrbig(0,rbig,big);
-  Binary_Tree<int> rrrbig(0,rbig,rrbig);
-
-
   std::ofstream out("mytree.o");
   std::streambuf *coutbuf = std::cout.rdbuf(); //save old buf
   std::cout.rdbuf(out.rdbuf()); //redirect std::cout to out.txt!
 
-  cout << rrrbig.to_string();
-  std::cout.rdbuf(coutbuf); //reset to standard output again
+  Binary_Tree<int> lT(1222);
+  Binary_Tree<int> rT(3000);
+  Binary_Tree<int> big(2,lT,rT);
+  Binary_Tree<int> rbig(0,lT,big);
+  Binary_Tree<int> rrbig(0,rbig,big);
+  Binary_Tree<int> rrrbig(0,rbig,rrbig);
+  Binary_Tree<int> rrrrbig(0,rrrbig, Binary_Tree<int>(0,rbig,rrrbig));
 
+  cout << rrrrbig.to_string();
+
+  std::cout.rdbuf(coutbuf); //reset to standard output again
   return 0;
 }
 

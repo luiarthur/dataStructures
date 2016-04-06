@@ -33,8 +33,9 @@ draw_node <- function(root,left,right,sep=2,sep_r=sep,sep_l=sep) {
   left.len <- nchar(left[1])
   right.len <- nchar(right[1])
 
-  left_dist_from_root <- left.len - rgx('\\d',left[1])
-  right_dist_from_root <- rgx('\\d',right[1])
+  pattern <- '[a-z]|[0-9]|[.(),]'
+  left_dist_from_root <- left.len - rgx(pattern,left[1])
+  right_dist_from_root <- rgx(pattern,right[1])
   line1 <- blanks(left.len-left_dist_from_root," ") %+% blanks(sep+left_dist_from_root,"_") %+% root %+% 
            blanks(sep+right_dist_from_root,"_") %+% blanks(right.len-right_dist_from_root," ")
   line2 <- left %+% blanks(sep*2 + root.len) %+% right
@@ -49,8 +50,8 @@ draw_node <- function(root,left,right,sep=2,sep_r=sep,sep_l=sep) {
 
 # Draw Tree
 draw_tree <- function(x) {
-  y <- gsub("NULL,NULL", "|", paste(x,collapse=","))
-  y <- unlist( strsplit(y,",") )
+  y <- gsub("NULL;;NULL", "|", paste(x,collapse=";;"))
+  y <- unlist( strsplit(y,";;") )
 
   draw_tree.rec <- function(z) {
     rm.tail.bar <- function(xx) if (tail(xx,1) == "|") xx[-length(xx)] else xx
