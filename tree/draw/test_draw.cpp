@@ -7,8 +7,9 @@
 using namespace std;
 
 int main() {
+  std::string outfile = "mytree.o";
 
-  std::ofstream out("mytree.o");
+  std::ofstream out(outfile);
   std::streambuf *coutbuf = std::cout.rdbuf(); //save old buf
   std::cout.rdbuf(out.rdbuf()); //redirect std::cout to out.txt!
 
@@ -21,8 +22,11 @@ int main() {
   Binary_Tree<int> rrrrbig(0,rrrbig, Binary_Tree<int>(0,rbig,rrrbig));
 
   cout << rrrrbig.to_string();
-
   std::cout.rdbuf(coutbuf); //reset to standard output again
+
+  //std::string cmd = "./print_tree.R " + outfile;
+  //system(cmd.c_str());
+
   return 0;
 }
 
