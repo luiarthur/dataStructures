@@ -23,7 +23,8 @@ template<typename T>
     os << data;
     return os.str();
   }
-
+  
+  virtual std::string to_pretty_string();
 };
 
 // operator "<<" overloading for BTNode<T>
@@ -31,3 +32,20 @@ template<typename T>
   std::ostream& operator<<(std::ostream& out, BTNode<T>& node) {
   return out << node.to_string();
 }
+
+template<typename T> 
+  std::string BTNode<T>::to_pretty_string() {
+  //cout << *this->left; // to print out left node
+
+  std::string out;
+
+  std::string dat_l = this->left->to_string();
+  std::string dat_c = data.to_string();
+  std::string dat_r = this->right->to_string();
+
+  out = std::string(dat_l.length()-3,' ') + std::string(3,'_') + dat_c + std::string(3,'_');
+  out += "\n" + dat_l + std::string(dat_c.length(),' ') + dat_r;
+
+  return out;
+}
+

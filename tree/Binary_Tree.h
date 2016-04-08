@@ -105,13 +105,13 @@ template<typename T>
 //  }
 //}
 //
-//template<typename T>
-//  std::string Binary_Tree<T>::to_pretty_string() {
-//  std::string pretty_tree = this->to_string();
-//                                                     //.c_str: string => char*
-//  std::vector<std::string> v_tree = split(pretty_tree.c_str(),'\n');
-//  //std::cout << arr_tree << std::endl;
-//  
-//
-//  return pretty_tree + std::string(10,'_') ;
-//}
+template<typename T>
+  std::string Binary_Tree<T>::to_pretty_string() {
+  //std::string pretty_tree = this->to_string();
+                                                       //.c_str: string => char*
+  //std::vector<std::string> v_tree = split(pretty_tree.c_str(),'\n');
+  //std::cout << arr_tree << std::endl;
+  
+
+  return pretty_tree + std::string(10,'_') ;
+}

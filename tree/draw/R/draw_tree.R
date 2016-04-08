@@ -33,7 +33,7 @@ draw_node <- function(root,left,right,sep=2,sep_r=sep,sep_l=sep) {
   left.len <- nchar(left[1])
   right.len <- nchar(right[1])
 
-  pattern <- '[a-z]|[0-9]|[.(),]'
+  pattern <- '[a-z]|[0-9]|[.(),><]'
   left_dist_from_root <- left.len - rgx(pattern,left[1])
   right_dist_from_root <- rgx(pattern,right[1])
   line1 <- blanks(left.len-left_dist_from_root," ") %+% blanks(sep+left_dist_from_root,"_") %+% root %+% 
