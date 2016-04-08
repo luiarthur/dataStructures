@@ -17,7 +17,7 @@ int main() {
   BTNode<MTTuple> node_r(tup_r);
   BTNode<MTTuple> node_center(tup_c,&node_l,&node_r);
 
-  cout << node_center.to_pretty_string() << endl;;
+  //cout << node_center.to_pretty_string() << endl;;
 
   return 0;
 }
