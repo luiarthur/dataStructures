@@ -35,10 +35,13 @@ template<typename T> class Binary_Tree {
         bool is_null();
         virtual std::string to_string(); // draw the tree
         //virtual std::string to_pretty_string(); // draw a pretty tree
+        void print() const;
 
     protected:
         Binary_Tree(BTNode<T>* new_root) : root(new_root) {}
         BTNode<T> *root;
+        //recursive helper function for "print()"
+        void print(BTNode<T>* node,int depth) const;
 };
 
 
@@ -115,3 +118,25 @@ template<typename T>
 //
 //  return pretty_tree + std::string(10,'_') ;
 //}
+//
+
+template <typename T>
+void Binary_Tree<T>::print() const { print(root,0); }
+
+template <typename T>
+void Binary_Tree<T>::print(BTNode<T>* node,int depth) const
+{
+    if(node == NULL)
+    {
+        std::cout << std::endl;
+        return;
+    }
+
+    print(node->right,depth+1);
+    for(int i=0; i < depth; i++)
+    {
+        std::cout << "\t";
+    }
+    std::cout << node->data << std::endl;
+    print(node->left,depth+1);
+}
