@@ -18,6 +18,8 @@ Need to implement tree drawing:
 
   - https://github.com/balajiln/mondrianforest
       - To install the the required packages,
+
       > `$ pip install --user <package>`
+
       worked for all but `matplotlib`. Do `sudo apt-get install python-matplotlib` instead.
 
