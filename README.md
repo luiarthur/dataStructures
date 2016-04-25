@@ -17,5 +17,7 @@ Need to implement tree drawing:
 # For implement Teh and Roy's Mondrian Forest
 
   - https://github.com/balajiln/mondrianforest
-      - `$ pip install --user <package>` worked for all but `matplotlib`. Do `sudo apt-get install python-matplotlib` instead.
+      - To install the the required packages,
+      > `$ pip install --user <package>`
+      worked for all but `matplotlib`. Do `sudo apt-get install python-matplotlib` instead.
 
