@@ -13,3 +13,9 @@ such as the mondrian tree class.
 Need to implement tree drawing:
   - http://blog.pixelingene.com/2011/07/building-a-tree-diagram-in-d3-js/
   - https://github.com/mbostock/d3/wiki/Gallery
+
+# For implement Teh and Roy's Mondrian Forest
+
+  - https://github.com/balajiln/mondrianforest
+      - `$ pip install --user <package>` worked for all but `matplotlib`. Do `sudo apt-get install python-matplotlib` instead.
+
