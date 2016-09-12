@@ -7,7 +7,8 @@ template<typename T> struct Tree {
   Tree<T> *left;// = NULL;
   Tree<T> *right;// = NULL;
 
-  // Constructor:
+  // Constructor: Note that using null requires including cstddef, 
+  // but sstream also does the job and will be used for other functions.
   Tree(T& e, Tree<T>* l=NULL, Tree<T>* r=NULL): elem(e), left(l), right(r) {}
 
   // Destructor (to avoid warning message)
